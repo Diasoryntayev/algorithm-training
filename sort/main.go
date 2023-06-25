@@ -18,7 +18,8 @@ func main() {
 	// }
 	// fmt.Println(sortArrByBubbleSort)
 
-	fmt.Println(selectionSort(arr))
+	// fmt.Println(selectionSort(arr))
+	fmt.Println(insertionSort(arr))
 }
 
 func bubbleSort(numbers []int) ([]int, error) {
@@ -33,7 +34,6 @@ func bubbleSort(numbers []int) ([]int, error) {
 }
 
 func selectionSort(numbers []int) ([]int, error) {
-	fmt.Println(numbers)
 	for i := 0; i < len(numbers)-1; i++ {
 		minIndex := i
 		for j := i + 1; j < len(numbers); j++ {
@@ -44,9 +44,17 @@ func selectionSort(numbers []int) ([]int, error) {
 		if minIndex != i {
 			numbers[minIndex], numbers[i] = numbers[i], numbers[minIndex]
 		}
-		fmt.Println(numbers)
 	}
 	return numbers, nil
 }
 
-func insertionSort(numbers []int) ([]int, error)
+func insertionSort(numbers []int) ([]int, error) {
+	for i := 1; i < len(numbers); i++ {
+		sorted := i - 1
+		for sorted != -1 && numbers[sorted] > numbers[sorted+1] {
+			numbers[sorted], numbers[sorted+1] = numbers[sorted+1], numbers[sorted]
+			sorted--
+		}
+	}
+	return numbers, nil
+}
