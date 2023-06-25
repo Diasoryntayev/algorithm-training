@@ -12,13 +12,13 @@ import (
 
 func main() {
 	arr := []int{11, 20, 54, 95, 23, 123, 9, 0}
-	// sortArrByBubbleSort, err := bubbleSort(arr)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
-	// fmt.Println(sortArrByBubbleSort)
+	sortArrByBubbleSort, err := bubbleSort(arr)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(sortArrByBubbleSort)
 
-	// fmt.Println(selectionSort(arr))
+	fmt.Println(selectionSort(arr))
 	fmt.Println(insertionSort(arr))
 }
 
